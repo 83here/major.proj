@@ -25,6 +25,6 @@ df = pd.DataFrame({
 })
 
 # --- Save to CSV ---
-df.to_csv("/Users/prasanna/Desktop/major.proj/data_gen/healthy.csv", index=False)
+df.to_csv("data_gen/healthy.csv", index=False)
 
 print("✅ healthy.csv generated: 250 rows (clean signal, 1 cycle every 5 seconds).")

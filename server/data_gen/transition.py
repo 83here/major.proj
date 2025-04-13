@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the two datasets
-df_a = pd.read_csv('/Users/prasanna/Desktop/major.proj/data_gen/healthy.csv')
-df_b = pd.read_csv('/Users/prasanna/Desktop/major.proj/data_gen/faulty.csv')
+df_a = pd.read_csv('data_gen/healthy.csv')
+df_b = pd.read_csv('data_gen/faulty.csv')
 
 # Create the transition dataset
 df_transition = df_a.copy()
@@ -32,4 +32,4 @@ for i in range(len(df_transition)):
         df_transition.loc[i, 'Z-axis (g)'] = weight_a * df_a.loc[i, 'Z-axis (g)'] + weight_b * df_b.loc[i, 'Z-axis (g)']
 
 # Save the transition dataset
-df_transition.to_csv('/Users/prasanna/Desktop/major.proj/data_gen/transition.csv', index=False)
+df_transition.to_csv('data_gen/transition.csv', index=False)
