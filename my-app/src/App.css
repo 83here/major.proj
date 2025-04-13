@@ -1,0 +1,147 @@
+:root {
+  --primary: #ffffff;
+  --secondary: #cccccc;
+  --text-light: #d1d5db;
+  --text-dark: #ffffff;
+  --background: #000000;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow: rgba(0, 0, 0, 0.5);
+  --green: #22c55e;
+  --lime: #84cc16;
+  --yellow: #facc15;
+  --orange: #fb923c;
+  --red: #ef4444;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--text-dark);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.highlight {
+  color: var(--secondary);
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+
+section {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+  backdrop-filter: blur(4px);
+}
+
+section h2, section h3 {
+  color: var(--primary);
+}
+
+section ul {
+  padding-left: 1.2rem;
+  line-height: 1.8;
+}
+
+section ul li {
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+blockquote {
+  font-style: italic;
+  color: var(--text-light);
+  border-left: 4px solid var(--secondary);
+  padding-left: 1rem;
+  margin: 0;
+}
+
+/* Motor Health Status Box */
+.status-card {
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.status-card.green {
+  background-color: var(--green);
+  color: #000;
+}
+
+.status-card.lime {
+  background-color: var(--lime);
+  color: #000;
+}
+
+.status-card.yellow {
+  background-color: var(--yellow);
+  color: #000;
+}
+
+.status-card.orange {
+  background-color: var(--orange);
+  color: #000;
+}
+
+.status-card.red {
+  background-color: var(--red);
+  color: #fff;
+}
+.dashboard-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.left-panel {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.right-panel {
+  flex: 0 0 68%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .left-panel,
+  .right-panel {
+    flex: 1 1 100%;
+  }
+}
