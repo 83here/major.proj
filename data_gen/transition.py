@@ -11,7 +11,7 @@ df_transition = df_a.copy()
 
 # Define transition parameters
 transition_start = 15   # Start transition after time step 5
-transition_length = 20  # Transition over 10 time steps (steps 6-15)
+transition_length = 30  # Transition over 10 time steps (steps 6-15)
 
 # Calculate transition weights for each time step
 for i in range(len(df_transition)):
