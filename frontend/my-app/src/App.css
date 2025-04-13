@@ -1,15 +1,17 @@
-/* App.css */
-
 :root {
-  --primary: #4f46e5; /* Indigo */
-  --secondary: #6366f1;
-  --accent: #e0e7ff;
-  --text-dark: #1f2937;
-  --text-light: #4b5563;
-  --background: #f9fafb;
-  --card-bg: #ffffff;
-  --border: #e5e7eb;
-  --shadow: rgba(0, 0, 0, 0.05);
+  --primary: #ffffff;
+  --secondary: #cccccc;
+  --text-light: #d1d5db;
+  --text-dark: #ffffff;
+  --background: #000000;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+  --shadow: rgba(0, 0, 0, 0.5);
+  --green: #22c55e;
+  --lime: #84cc16;
+  --yellow: #facc15;
+  --orange: #fb923c;
+  --red: #ef4444;
 }
 
 body {
@@ -21,9 +23,10 @@ body {
 }
 
 #root {
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
+  height: 100%;
   padding: 3rem 1.5rem;
+  box-sizing: border-box;
 }
 
 header {
@@ -36,6 +39,10 @@ header h1 {
   color: var(--primary);
 }
 
+.highlight {
+  color: var(--secondary);
+}
+
 header p {
   font-size: 1.2rem;
   color: var(--text-light);
@@ -46,16 +53,15 @@ section {
   background-color: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 12px;
-  box-shadow: 0 4px 8px var(--shadow);
+  box-shadow: 0 4px 12px var(--shadow);
   padding: 1.8rem 2rem;
   margin-bottom: 2rem;
   text-align: left;
+  backdrop-filter: blur(4px);
 }
 
-section h2 {
-  font-size: 1.5rem;
+section h2, section h3 {
   color: var(--primary);
-  margin-bottom: 1rem;
 }
 
 section ul {
@@ -76,13 +82,67 @@ blockquote {
   margin: 0;
 }
 
-h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: var(--primary);
+/* Motor Health Status Box */
+.status-card {
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
-/* Chart container */
-.recharts-wrapper {
-  margin-top: 1rem;
+.status-card.green {
+  background-color: var(--green);
+  color: #000;
 }
+
+.status-card.lime {
+  background-color: var(--lime);
+  color: #000;
+}
+
+.status-card.yellow {
+  background-color: var(--yellow);
+  color: #000;
+}
+
+.status-card.orange {
+  background-color: var(--orange);
+  color: #000;
+}
+
+.status-card.red {
+  background-color: var(--red);
+  color: #fff;
+}
+.dashboard-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.left-panel {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.right-panel {
+  flex: 0 0 68%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .left-panel,
+  .right-panel {
+    flex: 1 1 100%;
+  }
+}
+
