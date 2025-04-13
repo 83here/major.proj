@@ -24,6 +24,6 @@ df = pd.DataFrame({
 })
 
 # --- Save to CSV ---
-df.to_csv("/Users/prasanna/Desktop/major.proj/data_gen/faulty.csv", index=False)
+df.to_csv("data_gen/faulty.csv", index=False)
 
 print("faulty.csv generated with sin(3ωt) + sin(7ωt): 1000 rows, simulating sharp, faulty vibration with 5s cycle.")

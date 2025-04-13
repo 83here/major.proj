@@ -5,7 +5,7 @@ from collections import deque
 import time
 
 buffer = deque(maxlen=10)
-CSV_PATH = "/Users/prasanna/Desktop/major.proj/data_gen/transition.csv"
+CSV_PATH = "data_gen/transition.csv"
 
 def simulate_data():
     print(" simulate_data() started!")

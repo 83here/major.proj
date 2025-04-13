@@ -29,7 +29,7 @@ app.add_middleware(
 
 # Load model
 model = LSTMForecaster(input_size=3)
-model.load("/Users/prasanna/Desktop/major.proj/server/model_data/lstm_forecaster.pth")
+model.load("/model_data/lstm_forecaster.pth")
 
 @app.get("/predict")
 def get_prediction():
