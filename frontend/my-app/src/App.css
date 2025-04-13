@@ -1,0 +1,88 @@
+/* App.css */
+
+:root {
+  --primary: #4f46e5; /* Indigo */
+  --secondary: #6366f1;
+  --accent: #e0e7ff;
+  --text-dark: #1f2937;
+  --text-light: #4b5563;
+  --background: #f9fafb;
+  --card-bg: #ffffff;
+  --border: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.05);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--text-dark);
+}
+
+#root {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+
+section {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px var(--shadow);
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+section h2 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+section ul {
+  padding-left: 1.2rem;
+  line-height: 1.8;
+}
+
+section ul li {
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+blockquote {
+  font-style: italic;
+  color: var(--text-light);
+  border-left: 4px solid var(--secondary);
+  padding-left: 1rem;
+  margin: 0;
+}
+
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+/* Chart container */
+.recharts-wrapper {
+  margin-top: 1rem;
+}
