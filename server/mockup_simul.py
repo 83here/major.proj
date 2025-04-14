@@ -6,14 +6,14 @@ from sklearn.metrics import mean_squared_error
 from lstm_model import LSTMForecaster
 
 # --- Load test data ---
-csv_path = "data_gen/transition.csv"
+csv_path = "/Users/prasanna/Desktop/major.proj/server/data_gen/transition.csv"
 df = pd.read_csv(csv_path)
 data = df[["X-axis (g)", "Y-axis (g)", "Z-axis (g)"]].values
 data = torch.tensor(data, dtype=torch.float32)  # shape: [T, 3]
 
 # --- Load model ---
 model = LSTMForecaster(input_size=3)
-model.load("model_data/lstm_forecaster.pth")
+model.load("/Users/prasanna/Desktop/major.proj/server/model_data/lstm_forecaster.pth")
 
 # --- Init plot ---
 fig, axs = plt.subplots(4, 1, figsize=(10, 8))
@@ -59,7 +59,10 @@ def update(frame):
 
     axs[3].set_xlim(0, max(100, len(mse_vals)))
 
+    print(f"Frame {frame}: MSE = {mse:.4f}")  # <-- This prints the MSE
+
     return lines["input"] + lines["pred"] + lines["true"] + [lines["mse"]]
+
 
 # --- Animate ---
 ani = animation.FuncAnimation(
